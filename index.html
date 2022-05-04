@@ -6,8 +6,8 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-face-aframe.prod.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-	const list = ["glasses1", "glasses2", "hat1", "hat2", "hat3", "mariohat"];
-	const visibles = [false, true, false, true, false, false];
+	const list = ["hat4", "glasses2", "hat1", "hat2", "hat3", "mariohat"];
+	const visibles = [true, true, false, false, false, false];
 	const setVisible = (button, entities, visible) => {
 	  if (visible) {
 	    button.classList.add("selected");
@@ -63,14 +63,14 @@
 	<img id="hat1" src="./assets/hut1/thumbnail.png"/>
 	<img id="hat2" src="./assets/hut2/thumbnail.png"/>
     <img id="hat3" src="https://www.ikea.com/us/en/images/products/knorva-hat-blue__0812162_pe771942_s5.jpg?f=s"/>
-	<img id="glasses1" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/glasses/thumbnail.png"/>
+	<img id="hat4" src="./assets/hut4/thumbnail.png"/>
 	<img id="glasses2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/glasses2/thumbnail.png"/>
 	<img id="mariohat" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/hat2/thumbnail.png"/>
       </div>
       <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
           <a-asset-item id="headModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
-          <a-asset-item id="glassesModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/glasses/scene.gltf"></a-asset-item>
+          <a-asset-item id="hatModel4" src="/hatmade/assets/hut4.gltf"></a-asset-item>
           <a-asset-item id="glassesModel2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/glasses2/scene.gltf"></a-asset-item>
           <!--a-asset-item id="hatModel" src="/top_hat/scene.gltf"></a-asset-item-->
           <a-asset-item id="hatModel3" src="/hatmade/assets/hat_clean3.gltf"></a-asset-item>
@@ -93,11 +93,11 @@
         <a-entity mindar-face-target="anchorIndex: 10">
       <a-gltf-model rotation="0 120 0" position="0.2 1 -0.2" scale="0.004 0.004 0.004" src="#hatModel3" class="hat3-entity" visible="false"></a-gltf-model>
         </a-entity>
-        <a-entity mindar-face-target="anchorIndex: 168">
-	  <a-gltf-model rotation="0 -0 0" position="0 0 0" scale="0.01 0.01 0.01" src="#glassesModel" class="glasses1-entity" visible="false"></a-gltf-model>
+        <a-entity mindar-face-target="anchorIndex: 10">
+	  <a-gltf-model rotation="120 30 0" position="0.7 2.8 0.6" scale="2.1 2.1 2.1" src="#hatModel4" class="hat4-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 168">
-	  <a-gltf-model rotation="0 -90 0" position="0 -0.3 0" scale="0.6 0.6 0.6" src="#glassesModel2" class="glasses2-entity" visible="false"></a-gltf-model>
+	  <a-gltf-model rotation="0 -90 0" position="0 -0.3 0" scale="0.5 0.5 0.5" src="#glassesModel2" class="glasses2-entity" visible="false"></a-gltf-model>
         </a-entity>
         <a-entity mindar-face-target="anchorIndex: 10">
           <a-gltf-model rotation="0 -0 0" position="0.1 -0.3 -0.5" scale="0.0085 0.0085 0.0085" src="#mariohatModel" class="mariohat-entity" visible="false"></a-gltf-model>
