@@ -6,8 +6,8 @@
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-face-aframe.prod.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-	const list = ["hat4", "glasses2", "hat1", "hat2", "hat3", "mariohat"];
-	const visibles = [true, true, false, false, false, false];
+	const list = ["hat1", "hat2", "hat3", "hat4", "laura_strohblume", "glasses2", "mariohat"];
+	const visibles = [false, false, false, false, true, true, false];
 	const setVisible = (button, entities, visible) => {
 	  if (visible) {
 	    button.classList.add("selected");
@@ -64,18 +64,20 @@
 	<img id="hat2" src="./assets/hut2/thumbnail.png"/>
     <img id="hat3" src="https://www.ikea.com/us/en/images/products/knorva-hat-blue__0812162_pe771942_s5.jpg?f=s"/>
 	<img id="hat4" src="./assets/hut4/thumbnail.png"/>
+  <img id="laura_strohblume" src="./assets/laura_strohblume/thumbnail.png"/>
 	<img id="glasses2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/glasses2/thumbnail.png"/>
 	<img id="mariohat" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/hat2/thumbnail.png"/>
       </div>
       <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         <a-assets>
           <a-asset-item id="headModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
-          <a-asset-item id="hatModel4" src="/hatmade/assets/hut4.gltf"></a-asset-item>
-          <a-asset-item id="glassesModel2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/glasses2/scene.gltf"></a-asset-item>
           <!--a-asset-item id="hatModel" src="/top_hat/scene.gltf"></a-asset-item-->
-          <a-asset-item id="hatModel3" src="/hatmade/assets/hat_clean3.gltf"></a-asset-item>
-          <a-asset-item id="hatModel2" src="/hatmade/assets/hut2.gltf"></a-asset-item>
           <a-asset-item id="hatModel" src="/hatmade/assets/hut1.gltf"></a-asset-item>
+          <a-asset-item id="hatModel2" src="/hatmade/assets/hut2.gltf"></a-asset-item>
+          <a-asset-item id="hatModel3" src="/hatmade/assets/hat_clean3.gltf"></a-asset-item>
+          <a-asset-item id="hatModel4" src="/hatmade/assets/hut4.gltf"></a-asset-item>
+          <a-asset-item id="laura_strohblumeModel" src="/hatmade/assets/laura_strohblume/strohblume4.gltf"></a-asset-item>
+          <a-asset-item id="glassesModel2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/glasses2/scene.gltf"></a-asset-item>
           <a-asset-item id="mariohatModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/examples/face-tracking/assets/hat2/scene.gltf"></a-asset-item>
         </a-assets>
         <a-camera active="false" position="0 0 0"></a-camera>
@@ -96,6 +98,9 @@
         <a-entity mindar-face-target="anchorIndex: 10">
 	  <a-gltf-model rotation="180 -10 0" position="0 -0.05 -1" scale=".234 .234 .234" src="#hatModel4" class="hat4-entity" visible="false"></a-gltf-model> 
         </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 10">
+          <a-gltf-model rotation="0 -150 0" position="0.1 -1.1 -0.9" scale=".22 .22 .22" src="#laura_strohblumeModel" class="laura_strohblume-entity" visible="false"></a-gltf-model> 
+              </a-entity>
         <a-entity mindar-face-target="anchorIndex: 168">
 	  <a-gltf-model rotation="0 -90 0" position="0 -0.3 0" scale="0.5 0.5 0.5" src="#glassesModel2" class="glasses2-entity" visible="false"></a-gltf-model>
         </a-entity>
